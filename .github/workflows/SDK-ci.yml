@@ -55,6 +55,7 @@ jobs:
         run: |
           cd sdk
           npm i
+          npx playwright install
           npx smartui --version
           npx smartui config:create smartui-web.json
           npm run smartui-cloud
