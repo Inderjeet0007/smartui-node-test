@@ -1,0 +1,10 @@
+{
+    "platform": "MacOS Tahoe",
+    "browserName": "Safari",
+    "version": "19",
+    "visual": "true",
+    "name": "Onboard_SmartUI_Hooks_Test",
+    "build": "Onboard_SmartUI_Hooks_Build",
+    "smartUI.project": "Onboard_SmartUI_Hooks",
+    "selenium_version": "4.0.0"
+}
