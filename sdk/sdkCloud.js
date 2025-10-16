@@ -9,6 +9,9 @@ const KEY = process.env.LT_ACCESS_KEY || "<ACCESS_KEY>";
 let capabilities = {
   "browserName": "Chrome",
 	"browserVersion": "140.0",
+  github: {
+    "url": process.env.GITHUB_URL
+   },
   "LT:Options": {
     username: USERNAME,
     accessKey: KEY,
