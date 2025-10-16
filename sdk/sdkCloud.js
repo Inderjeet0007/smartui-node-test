@@ -39,11 +39,8 @@ let capabilities = {
   driver.manage().window().fullscreen();
   try {
     await driver.get("https://www.amazon.in/");
-    let options = {
-        ignoreType: ["layout"]
-      }
     await driver.sleep(5000)
-    await smartuiSnapshot(driver, `Amazon Home Page`, options);
+    await smartuiSnapshot(driver, `Amazon Home Page`);
   } finally {
     await driver.quit();
   }
