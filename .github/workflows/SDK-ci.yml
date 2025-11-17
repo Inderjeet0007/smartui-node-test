@@ -58,5 +58,5 @@ jobs:
           npx playwright install
           npx playwright install-deps
           npx smartui --version
-          npx smartui config:create smartui.json
+          npx smartui config:create .smartui.json
           npm run smartui-cloud
