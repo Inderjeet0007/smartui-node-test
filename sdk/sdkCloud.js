@@ -6,6 +6,8 @@ const USERNAME = process.env.LT_USERNAME || "<USERNAME>";
 
 // AccessKey:  AccessKey can be generated from automation dashboard or profile section
 const KEY = process.env.LT_ACCESS_KEY || "<ACCESS_KEY>";
+const LAYOUT_ON = true;
+
 let capabilities = {
   "browserName": "Chrome",
 	"browserVersion": "140.0",
@@ -27,6 +29,10 @@ let capabilities = {
   },
 };
 
+let layoutOpt = {
+  ignoreType: ["layout"]
+}
+
 (async function example() {
   // Setup Input capabilities
   var gridUrl =
@@ -39,11 +45,12 @@ let capabilities = {
   driver.manage().window().fullscreen();
   try {
     await driver.get("https://www.amazon.in/");
-    let layoutOpt = {
-      ignoreType: ["layout"]
-    }
-    await driver.sleep(5000);
-    await smartuiSnapshot(driver, `Amazon Home Page`, layoutOpt);
+    await driver.sleep(3000);
+    await smartuiSnapshot(
+      driver,
+      "Amazon Home Page",
+      LAYOUT_ON ? layoutOpt : undefined
+    );
   } finally {
     await driver.quit();
   }
