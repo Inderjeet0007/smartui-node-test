@@ -42,7 +42,7 @@ let capabilities = {
     let layoutOpt = {
       ignoreType: ["layout"]
     }
-    await driver.sleep(5000)
+    await driver.sleep(5000);
     await smartuiSnapshot(driver, `Amazon Home Page`, layoutOpt);
   } finally {
     await driver.quit();

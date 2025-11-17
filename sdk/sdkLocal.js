@@ -1,4 +1,5 @@
 const { Builder, By, Key, until, Browser } = require('selenium-webdriver');
+const chrome = require('selenium-webdriver/chrome');
 const { smartuiSnapshot } = require('@lambdatest/selenium-driver');
 
 (async function example() {
@@ -8,13 +9,8 @@ const { smartuiSnapshot } = require('@lambdatest/selenium-driver');
   let driver = await new Builder().forBrowser('chrome').setChromeOptions(options).build();
 
   try {
-    await driver.get("https://www.lambdatest.com");
-    // await smartuiSnapshot(driver, "Lambdatest");
-    await driver.get("https://www.pinterest.com/pin/112801165652823604/");
-    // await smartuiSnapshot(driver, "NYC");
-    for(let i=0; i<1000; i++){
-      await smartuiSnapshot(driver, `NYC Snap No: ${i}`); // Capture Screenshot
-    }
+    await driver.get("http://localhost:8000/page.html");
+    await smartuiSnapshot(driver, "Local Page");
   } finally {
     await driver.quit();
   }
