@@ -29,14 +29,14 @@ let capabilities = {
   },
 };
 
-let layoutOpt = {
-  ignoreType: ["layout"]
-}
-
 (async function example() {
   // Setup Input capabilities
   var gridUrl =
     "https://" + USERNAME + ":" + KEY + "@hub.lambdatest.com/wd/hub";
+
+  let layoutOpt = {
+    ignoreType: ["layout"]
+  }
 
   let driver = await new Builder()
     .usingServer(gridUrl)
