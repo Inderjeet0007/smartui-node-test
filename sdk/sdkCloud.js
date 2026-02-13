@@ -15,17 +15,17 @@ let capabilities = {
     "url": process.env.GITHUB_URL
    },
   "LT:Options": {
-    username: USERNAME,
-    accessKey: KEY,
+    // username: USERNAME,
+    // accessKey: KEY,
     w3c: true,
     "name": "Home_Page_SmartUI_SDK",
     "build": "Home_Page_SmartUI_SDK_Build",
     visual: true,
     "platformName": "Windows 11",
-    "accessibility":true,
-    "accessibility.wcagVersion":"wcag21a",
-    "accessibility.bestPractice":true,
-    "accessibility.needsReview":true,  
+    // "accessibility":true,
+    // "accessibility.wcagVersion":"wcag21a",
+    // "accessibility.bestPractice":true,
+    // "accessibility.needsReview":true,  
   },
 };
 
@@ -44,11 +44,11 @@ let capabilities = {
     .build();
   driver.manage().window().fullscreen();
   try {
-    await driver.get("https://www.amazon.in/");
+    await driver.get("https://www.testmu.ai/");
     await driver.sleep(3000);
     await smartuiSnapshot(
       driver,
-      "Amazon Home Page",
+      "TestMu AI homepage",
       LAYOUT_ON ? layoutOpt : undefined
     );
   } finally {
